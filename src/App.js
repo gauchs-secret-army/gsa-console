@@ -60,11 +60,8 @@ function App() {
         </Route>
       </Switch>
     </Router>
-
-
   );
-
-//test change
+}
 
 function validateUser(id, password)
 {
@@ -73,16 +70,7 @@ function validateUser(id, password)
     return true;
   }
   return false;
-
 }
 
-// function validateUser(id, password)
-// {
-//   if(id != "" && isNumeric(id) && password != "")
-//   {
-//     return true;
-//   }
-//   return false;
-// }
 
 export default App;
