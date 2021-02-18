@@ -1,5 +1,94 @@
-@import "src/common/styles/colors.module.scss";
+@import "../../styles/colors.module.scss";
 
-.sidenav {
+.Sidenav {
+    width: 200px;
+    height: 800px;
+    padding: 10px 10px;
     background-color: $green;
+    text-align: center;
+}
+
+.Logo {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.Separator {
+    width: 180px;
+    height: 0;
+    margin: 5px 3px;
+    border: solid 1px $light;
+    display: inline-block;
+}
+
+.SidenavBtn {
+    width: 180px;
+    height: 65px;
+    margin: 16px 0;
+    padding: 5px 0px;
+    border-radius: 16px;
+    display: inline-block;
+    transition: all .2s ease-out;
+}
+
+.SidenavBtn:hover {
+    background-color: $light;
+    color: $green;
+}
+
+.SidenavBtnText {
+    width: 150px;
+    height: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.SignOutBtn {
+    width: 180px;
+    height: 50px;
+    margin: 8px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+.SignOutBtn:hover {
+    background-color: $light;
+    color: $green;
+}
+
+.SignOutBtnText {
+    font-size: 18px;
+    width: 180px;
+    height: 50px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.Icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.Icon-Exit {
+    margin-left: 3em;
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
+.a, a:visited {
+    color: $light;
+}
+
+.noHover{
+    pointer-events: none;
 }

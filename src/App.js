@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
+import {Sidenav} from './common/navigation/component/Sidenav';
 import './App.scss';
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
 
         <Route path="/">
           <div className="App">
+            <Sidenav/>
             <ul>
               {
                 employees.length < 1 ? <h3>No employees found!</h3>
