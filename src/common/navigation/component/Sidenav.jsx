@@ -8,6 +8,7 @@ export function Sidenav() {
             <div class = "Sidenav">
                 <div class="Logo" style={{backgroundImage: "url(/img/gsa_logo.png)"}}></div>
                 <div class="Separator"></div>
+                {{/*replace the http local host with the link to*/}}
                 <a href="http://localhost:3000/" class="SidenavBtn hover">
                     <ShoppingCart class="Icon noHover"/>
                     <div class="SidenavBtnText noHover">Start Transaction</div>
