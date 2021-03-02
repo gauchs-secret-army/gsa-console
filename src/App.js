@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
+import {Login} from './pages/login/Login';
 import './App.scss';
 
 function App() {
@@ -29,6 +29,9 @@ function App() {
       <Switch>
         <Route path="/transaction">
           {/* Insert Transaction Page Component */}
+        </Route>
+        <Route path="/login">
+          {<Login/>}
         </Route>
         <Route path="/products">
           {/* Insert Products Page Component */}
@@ -65,7 +68,7 @@ function App() {
 
 function validateUser(id, password)
 {
-  if(id != "" && isNumeric(id) && password != "" && id.length <= 5)
+  if(id !== "" && id.isNumeric(id) && password !== "" && id.length <= 5)
   {
     return true;
   }
