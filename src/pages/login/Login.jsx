@@ -9,6 +9,9 @@ export function Login() {
 			<div className={styles.loginblock}>
 			<div className={styles.idtext}></div>
 			</div>
+			<div className={styles.textbox}></div>
+			<div className={styles.textbox}></div>
+			<button className={styles.loginbutton}>Log In</button>
 		</div>
 		)
 }
