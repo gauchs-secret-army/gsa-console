@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 import {Sidenav} from './common/navigation/component/Sidenav';
 import {Transaction} from './pages/transaction/component/Transaction';
-import {Products} from './pages/products/component/Products';
-import {User} from './pages/user/component/User';
-import {Sales} from './pages/report/sales/component/Sales';
-import {User_Report} from './pages/report/user/component/User_Report';
+import {ProductListing} from './pages/products/component/ProductListing';
+import {EmployeeDetails} from './pages/employee/component/EmployeeDetails';
+import {SalesReport} from './pages/salesReport/component/SalesReport';
+import {CashierReport} from './pages/cashierReport/component/CashierReport';
 import './App.scss';
 
 function App() {
@@ -39,17 +39,17 @@ function App() {
             take the nav folder from common, and make a new folder called page, and make
             starter page for each page. */}
           </Route>
-          <Route path="/products">
-          <Products/>{/* Insert Products Page Component */}
+          <Route path="/productListing">
+          <ProductListing/>{/* Insert Products Page Component */}
           </Route>
-          <Route path="/user">
-          <User/>{/* Insert User Page Component */}
+          <Route path="/employeeDetails">
+          <EmployeeDetails/>{/* Insert User Page Component */}
           </Route>
-          <Route path="/report/sales">
-          <Sales/>{/* Insert Sales Report Page Component */}
+          <Route path="/salesReport">
+          <SalesReport/>{/* Insert Sales Report Page Component */}
           </Route>
-          <Route path="/report/user_report">
-          <User_Report/> {/* Insert User Report Page Component */}
+          <Route path="/cashierReport">
+          <CashierReport/> {/* Insert User Report Page Component */}
           </Route>
 
           <Route path="/">
