@@ -2,7 +2,11 @@
 
 .Sidenav {
     width: 200px;
-    height: 800px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
     padding: 10px 10px;
     background-color: $green;
     text-align: center;
