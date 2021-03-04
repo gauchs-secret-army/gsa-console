@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Sidenav.styles.scss";
-import { LogOut, Truck, UserPlus, Users, ShoppingCart, DollarSign } from 'react-feather';
+import { LogOut, Truck, UserPlus, BarChart, ShoppingCart, DollarSign } from 'react-feather';
 
 export function Sidenav() {
     return (
@@ -18,15 +18,15 @@ export function Sidenav() {
                 </a>
                 <a href="http://localhost:3000/" class="SidenavBtn">
                     <UserPlus class="Icon noHover"/>
-                    <div class="SidenavBtnText noHover">Create User</div>
+                    <div class="SidenavBtnText noHover">Create Employee</div>
                 </a>
                 <a href="http://localhost:3000/" class="SidenavBtn">
                     <DollarSign class="Icon noHover"/>
                     <div class="SidenavBtnText noHover">Sales Report</div>
                 </a>
                 <a href="http://localhost:3000/" class="SidenavBtn">
-                    <Users class="Icon noHover"/>
-                    <div class="SidenavBtnText noHover">Support</div>
+                    <BarChart class="Icon noHover"/>
+                    <div class="SidenavBtnText noHover">Cashier Report</div>
                 </a>
                 <div class="Separator"></div>
                 <a href="http://localhost:3000/" class="SignOutBtn">
