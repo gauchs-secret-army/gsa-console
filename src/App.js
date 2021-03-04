@@ -6,6 +6,10 @@ import {
 } from "react-router-dom";
 import {Sidenav} from './common/navigation/component/Sidenav';
 import {Transaction} from './pages/transaction/component/Transaction';
+import {Products} from './pages/products/component/Products';
+import {User} from './pages/user/component/User';
+import {Sales} from './pages/report/sales/component/Sales';
+import {User_Report} from './pages/report/user/component/User_Report';
 import './App.scss';
 
 function App() {
@@ -36,16 +40,16 @@ function App() {
             starter page for each page. */}
           </Route>
           <Route path="/products">
-            {/* Insert Products Page Component */}
+          <Products/>{/* Insert Products Page Component */}
           </Route>
           <Route path="/user">
-            {/* Insert User Page Component */}
+          <User/>{/* Insert User Page Component */}
           </Route>
           <Route path="/report/sales">
-            {/* Insert Sales Report Page Component */}
+          <Sales/>{/* Insert Sales Report Page Component */}
           </Route>
-          <Route path="/report/user">
-            {/* Insert User Report Page Component */}
+          <Route path="/report/user_report">
+          <User_Report/> {/* Insert User Report Page Component */}
           </Route>
 
           <Route path="/">
