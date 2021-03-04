@@ -89,6 +89,10 @@
     color: $light;
 }
 
+.a, a:link {
+    color: $light;
+}
+
 .noHover{
     pointer-events: none;
 }
