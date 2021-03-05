@@ -10,6 +10,16 @@
     padding: 10px 10px;
     background-color: $green;
     text-align: center;
+
+    .footer {
+        bottom: 0;
+        position: fixed;
+        display: block;
+        .Separator,
+        .SignOutBtn {
+            display: block;
+        }
+    }
 }
 
 .Logo {

@@ -29,6 +29,7 @@ export function Sidenav() {
                     <BarChart class="Icon noHover"/>
                     <div class="SidenavBtnText noHover">Cashier Report</div>
                 </a>
+            <div class="footer">
                 <div class="Separator"></div>
                 <a href="http://localhost:3000/" class="SignOutBtn">
                     <div class="SignOutBtnText">
