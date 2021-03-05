@@ -4,13 +4,17 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {Sidenav} from './common/navigation/component/Sidenav';
+
+import './App.scss';
+
+import {Login} from './pages/login/Login';
 import {Transaction} from './pages/transaction/component/Transaction';
 import {ProductListing} from './pages/products/component/ProductListing';
 import {EmployeeDetails} from './pages/employee/component/EmployeeDetails';
 import {SalesReport} from './pages/salesReport/component/SalesReport';
 import {CashierReport} from './pages/cashierReport/component/CashierReport';
-import './App.scss';
+
+import {Sidenav} from './common/navigation/component/Sidenav';
 
 function App() {
   let [employees, setEmployees ] = useState([]);
@@ -72,17 +76,16 @@ function App() {
       </Router>
 
   );
-
-
 }
 
-// function validateUser(id, password)
-// {
-//   if(id != "" && isNumeric(id) && password != "")
-//   {
-//     return true;
-//   }
-//   return false;
-// }
+function validateUser(id, password)
+{
+  if(id !== "" && id.isNumeric(id) && password !== "" && id.length <= 5)
+  {
+    return true;
+  }
+  return false;
+}
+
 
 export default App;
