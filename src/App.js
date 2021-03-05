@@ -7,7 +7,7 @@ import {
 
 import './App.scss';
 
-import {Login} from './pages/login/Login';
+import {Login} from './pages/login/component/Login';
 import {Transaction} from './pages/transaction/component/Transaction';
 import {ProductListing} from './pages/products/component/ProductListing';
 import {EmployeeDetails} from './pages/employee/component/EmployeeDetails';
@@ -57,8 +57,9 @@ function App() {
           </Route>
 
           <Route path="/">
-            <div className="App">
-              {/* <Sidenav/> */}
+            <Login />
+            {/* <div className="App">
+              <Sidenav/>
               <ul>
                 {
                   employees.length < 1 ? <h3>No employees found!</h3>
@@ -70,7 +71,7 @@ function App() {
                   })
                 }
               </ul>
-            </div>
+            </div> */}
           </Route>
         </Switch>
       </Router>
