@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Menu.styles.scss";
+import styles from "./Menu.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 
 

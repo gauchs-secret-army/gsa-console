@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Transaction.styles.scss";
+import styles from "./Transaction.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 
 

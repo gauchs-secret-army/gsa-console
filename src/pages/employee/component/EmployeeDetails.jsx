@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./EmployeeDetails.styles.scss";
+import styles from "./EmployeeDetails.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 
 

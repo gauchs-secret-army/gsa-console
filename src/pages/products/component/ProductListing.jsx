@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./ProductListing.styles.scss";
+import styles from "./ProductListing.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 
 

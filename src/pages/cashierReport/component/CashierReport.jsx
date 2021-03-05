@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./CashierReport.styles.scss";
+import styles from "./CashierReport.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 
 
