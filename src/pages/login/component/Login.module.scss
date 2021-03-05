@@ -39,8 +39,6 @@
 			grid-area: 1 / 2 / 2 / 3;
 
 			.loginblock {
-				width: 408px;
-				height: 504px;
 				margin: auto 32px;
 				padding: 88px 64px;
 				border-radius: 16px;
@@ -48,9 +46,35 @@
 				background-color: $green;
 
 				.loginfield {
-					margin: 48px auto;
+					&:first-child {
+						margin-top: inherit;
+					}
+					margin: 24px auto;
 				}
-			  }
+
+				.loginbtn {
+					height: 56px;
+					width: 100%;
+					margin-top: 48px;
+					border: none;
+					border-radius: 8px;
+					background-color: $red;
+					color: $light;
+					font-size: 24px;
+					font-weight: bold;
+					transition: all ease-in-out 0.2s;
+
+					&:hover {
+						cursor: pointer;
+						background-color: $blue;
+					}
+
+					&:active:hover {
+						opacity: 0.5;
+						cursor: pointer;
+					}
+				}
+			}
 		}
 	}	
 }

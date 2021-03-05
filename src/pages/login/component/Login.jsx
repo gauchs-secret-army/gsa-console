@@ -35,7 +35,7 @@ export function Login() {
 							onChange={e => setPass(e.target.value)}
 						/>
 
-						<button className={styles.loginbutton}>Log In</button>
+						<button className={styles.loginbtn}>Log In</button>
 					</div>
 				</div>
 			</div>
