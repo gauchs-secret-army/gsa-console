@@ -4,15 +4,21 @@ import styles from "./Login.module.scss";
 export function Login() {
 	return(
 		<div className={styles.login}>
-			<img src={process.env.PUBLIC_URL+"img/logo.png"}></img>
-			<div className={styles.loginblock}>
-			<div className={styles.idtext}></div>
+			<div className={styles.grid}>
+				<div className={styles.cell, styles.left}>
+					<div className={styles.logo}>
+						<img src={process.env.PUBLIC_URL+"img/logo.png"}></img>
+					</div>
+					<p>*Not officially endorsed by Dr. John Gauch or anyone in the Gauch family</p>
+				</div>
+				<div className={styles.cell, styles.right}>
+					<div className={styles.loginblock}>
+						<button className={styles.loginbutton}>Log In</button>
+					</div>
+				</div>
 			</div>
-			<div className={styles.textbox}></div>
-			<div className={styles.textbox}></div>
-			<button className={styles.loginbutton}>Log In</button>
 		</div>
-		)
+	)
 }
 
 
