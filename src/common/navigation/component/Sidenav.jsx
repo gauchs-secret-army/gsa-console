@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Sidenav.styles.scss";
+import styles from "./Sidenav.module.scss";
 import { LogOut, Truck, UserPlus, BarChart, ShoppingCart, DollarSign } from 'react-feather';
 
 export function Sidenav() {
