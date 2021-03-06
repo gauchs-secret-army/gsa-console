@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import GridLoader from 'react-spinners/GridLoader';
 
 import styles from "./Login.module.scss";
+import colors from "../../../common/styles/colors.module.scss";
 import TextField from "../../../common/text_field/component/TextField";
+import classNames from 'classnames';
 
 export function Login() {
 	const [userID, setUserID] = useState("");
 	const [pass, setPass] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	function callLogin() {
+		setLoading(true);
 		if(validateUser(userID, pass)) {
 			var raw = JSON.stringify({
 				"employeeID": parseInt(userID),
@@ -23,7 +28,7 @@ export function Login() {
 				redirect: 'follow'
 			})
 			.then(response => {
-				if(response.status == 401) {
+				if(response.status === 401) {
 					alert("User ID or Password is invalid!");
 				} else {
 					return response.text();
@@ -34,10 +39,14 @@ export function Login() {
 					employeeID: userID,
 					manager: JSON.parse(result)
 				}));
-				window.location = window.localStorage.getItem('nextRoute') || "/transaction";
-			}).catch(error => console.log('error', error));
+				window.location = window.localStorage.getItem('nextRoute') || "/menu";
+			}).catch(error => console.log('error', error))
+			.finally(function() {
+				setLoading(false);
+			});
 		} else {
 			alert("User ID or Password is invalid!");
+			setLoading(false);
 		}
 	}
 
@@ -53,13 +62,13 @@ export function Login() {
 	return(
 		<div className={styles.login}>
 			<div className={styles.grid}>
-				<div className={styles.cell, styles.left}>
+				<div className={classNames(styles.cell, styles.left)}>
 					<div className={styles.logo}>
-						<img src={process.env.PUBLIC_URL+"img/logo.png"}></img>
+						<img src={process.env.PUBLIC_URL+"img/logo.png"} alt="logo"></img>
 					</div>
 					<p>*Not officially endorsed by Dr. John Gauch or anyone in the Gauch family</p>
 				</div>
-				<div className={styles.cell, styles.right}>
+				<div className={classNames(styles.cell, styles.right)}>
 					<div className={styles.loginblock}>
 						<TextField
 							className={styles.loginfield}
@@ -78,7 +87,12 @@ export function Login() {
 							onChange={e => setPass(e.target.value)}
 						/>
 
-						<button className={styles.loginbtn} onClick={() => callLogin()}>Log In</button>
+						<button className={styles.loginbtn} onClick={() => callLogin()}>
+							{ loading ? 
+								<GridLoader color={colors.light} size={15} />
+								: "Log In"
+							}
+						</button>
 					</div>
 				</div>
 			</div>
