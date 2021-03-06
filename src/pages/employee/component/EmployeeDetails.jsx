@@ -19,10 +19,47 @@ export function EmployeeDetails() {
 	function registerUser() {
 		setLoading(true);
 		if(validateEntries()) {
-			
+			var raw = JSON.stringify({
+				"employeeID": userID,
+				"firstName": firstName,
+				"lastName": lastName,
+				"password": pass,
+				"active": true,
+				"role": empType,
+				"managerID": 1
+			});
+
+			fetch("https://gsa-backend-api.herokuapp.com/register", {
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: raw,
+				redirect: 'follow'
+			})
+			.then(response => {
+				if(response.status === 200) {
+					alert("User has successfully been created!");
+					window.localStorage.removeItem('nextRoute');
+					window.location = "/";
+				} else {
+					alert("Error creating user! Please try again later or contact support at (479) 866-7051.");
+				}
+			})
+			.catch(error => alert("Error creating user! Please try again later or contact sales support at (479) 866-7051."))
+			.finally(() => setLoading(false));
 		} else {
 			setLoading(false);
 		}
+	}
+
+	function clearEntries() {
+		setUserID("");
+		setFirstName("");
+		setLastName("");
+		setPass("");
+		setVerifyPass("");
+		setEmpType("");
 	}
 
 	function validateEntries() {
@@ -47,9 +84,9 @@ export function EmployeeDetails() {
     const location = useLocation();
     window.localStorage.setItem('nextRoute', location.pathname);
     const user = JSON.parse(window.localStorage.getItem('user'));
-    if(!user) {
-      return <Redirect to="/" />
-    } else {
+    // if(!user) {
+    //   return <Redirect to="/" />
+    // } else {
         return (
             <div> 
                 <div className={styles.rootDiv}>
@@ -113,7 +150,7 @@ export function EmployeeDetails() {
                 <Sidenav/>
             </div>
         )
-    }
+    // }
 }
 
 //export default Transaction;
