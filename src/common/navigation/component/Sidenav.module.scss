@@ -84,6 +84,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
+    color: $light;
 }
 
 .Icon {
@@ -92,7 +93,7 @@
     display: inline-block;
 }
 
-.Icon-Exit {
+.IconExit {
     margin-left: 3em;
     width: 40px;
     height: 40px;
