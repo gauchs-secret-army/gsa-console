@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import styles from "./Login.module.scss";
 import TextField from "../../../common/text_field/component/TextField";
+import classNames from 'classnames';
 
 export function Login() {
 	const [userID, setUserID] = useState("");
@@ -23,7 +24,7 @@ export function Login() {
 				redirect: 'follow'
 			})
 			.then(response => {
-				if(response.status == 401) {
+				if(response.status === 401) {
 					alert("User ID or Password is invalid!");
 				} else {
 					return response.text();
@@ -53,13 +54,13 @@ export function Login() {
 	return(
 		<div className={styles.login}>
 			<div className={styles.grid}>
-				<div className={styles.cell, styles.left}>
+				<div className={classNames(styles.cell, styles.left)}>
 					<div className={styles.logo}>
-						<img src={process.env.PUBLIC_URL+"img/logo.png"}></img>
+						<img src={process.env.PUBLIC_URL+"img/logo.png"} alt="logo"></img>
 					</div>
 					<p>*Not officially endorsed by Dr. John Gauch or anyone in the Gauch family</p>
 				</div>
-				<div className={styles.cell, styles.right}>
+				<div className={classNames(styles.cell, styles.right)}>
 					<div className={styles.loginblock}>
 						<TextField
 							className={styles.loginfield}
