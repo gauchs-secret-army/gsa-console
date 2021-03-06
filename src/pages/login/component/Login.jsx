@@ -30,10 +30,10 @@ export function Login() {
 				}
 			})
 			.then(result => {
-				window.localStorage.setItem('user', {
+				window.localStorage.setItem('user', JSON.stringify({
 					employeeID: userID,
-					manager: result
-				}.toString());
+					manager: JSON.parse(result)
+				}));
 				window.location = window.localStorage.getItem('nextRoute') || "/transaction";
 			}).catch(error => console.log('error', error));
 		} else {

@@ -7,7 +7,7 @@ import { Redirect, useLocation } from 'react-router';
 export function Transaction(props) {
     const location = useLocation();
     window.localStorage.setItem('nextRoute', location.pathname);
-    const user = window.localStorage.getItem('user');
+    const user = JSON.parse(window.localStorage.getItem('user'));
     if(!user) {
       return <Redirect to="/" />
     } else {

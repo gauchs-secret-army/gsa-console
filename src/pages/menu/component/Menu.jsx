@@ -6,7 +6,7 @@ import {Sidenav} from "../../../common/navigation/component/Sidenav";
 export function Menu() {
     const location = useLocation();
     window.localStorage.setItem('nextRoute', location.pathname);
-    const user = window.localStorage.getItem('user');
+    const user = JSON.parse(window.localStorage.getItem('user'));
     if(!user) {
       return <Redirect to="/" />
     } else {

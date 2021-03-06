@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 export function Sidenav() {
-    const manager = window.localStorage.getItem('user').manager;
+    const manager = JSON.parse(window.localStorage.getItem('user')).manager;
     return (
         <div className={styles.Sidenav}>
             <div className={styles.Logo} style={{backgroundImage: "url(/img/gsa_logo.png)"}}></div>
@@ -42,7 +42,10 @@ export function Sidenav() {
             }
             <div className={styles.footer}>
                 <div className={styles.Separator}></div>
-                <a onClick={() => window.localStorage.removeItem('user')} className={styles.SignOutBtn}>
+                <a className={styles.SignOutBtn} onClick={() => {
+                        window.localStorage.removeItem('user');
+                        window.location = "/";
+                    }}>
                     <div className={styles.SignOutBtnText}>
                         Sign Out<LogOut className={classNames(styles.IconExit, styles.noHover)}/>
                     </div>
