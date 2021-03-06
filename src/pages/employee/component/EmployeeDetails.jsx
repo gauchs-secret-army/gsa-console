@@ -19,10 +19,46 @@ export function EmployeeDetails() {
 	function registerUser() {
 		setLoading(true);
 		if(validateEntries()) {
-			
+			var raw = JSON.stringify({
+				"employeeID": userID,
+				"firstName": firstName,
+				"lastName": lastName,
+				"password": pass,
+				"active": true,
+				"role": empType,
+				"managerID": 1
+			});
+
+			fetch("https://gsa-backend-api.herokuapp.com/register", {
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: raw,
+				redirect: 'follow'
+			})
+			.then(response => {
+				if(response.status === 200) {
+					alert("User has successfully been created!");
+					window.location = "/";
+				} else {
+					alert("Error creating user! Please try again later or contact support at (479) 866-7051.");
+				}
+			})
+			.catch(error => alert("Error creating user! Please try again later or contact sales support at (479) 866-7051."))
+			.finally(() => setLoading(false));
 		} else {
 			setLoading(false);
 		}
+	}
+
+	function clearEntries() {
+		setUserID("");
+		setFirstName("");
+		setLastName("");
+		setPass("");
+		setVerifyPass("");
+		setEmpType("");
 	}
 
 	function validateEntries() {
