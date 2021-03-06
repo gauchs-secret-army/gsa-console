@@ -3,7 +3,6 @@ import styles from "./Transaction.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import { Redirect, useLocation } from 'react-router';
 
-
 export function Transaction(props) {
     const location = useLocation();
     window.localStorage.setItem('nextRoute', location.pathname);
@@ -12,9 +11,9 @@ export function Transaction(props) {
       return <Redirect to="/" />
     } else {
         return (
-            <div> 
+            <div>
                 <div className={styles.rootDiv}>
-            
+                    
                     Transaction Page
                     {/*This is where everything relating to transaction component in here, 
                     this is where everything displayed will go, aka like fields*/}
