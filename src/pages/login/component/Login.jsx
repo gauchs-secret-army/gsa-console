@@ -7,6 +7,15 @@ export function Login() {
 	const [userID, setUserID] = useState("");
 	const [pass, setPass] = useState("");
 
+	function validateUser(id, password)
+	{
+		if(id !== "" && /^[0-9]*$/.test(id) && password !== "" && id.length <= 5)
+		{
+			return true;
+		}
+		return false;
+	}
+
 	return(
 		<div className={styles.login}>
 			<div className={styles.grid}>

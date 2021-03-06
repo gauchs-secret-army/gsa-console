@@ -79,14 +79,5 @@ function App() {
   );
 }
 
-function validateUser(id, password)
-{
-  if(id !== "" && id.isNumeric(id) && password !== "" && id.length <= 5)
-  {
-    return true;
-  }
-  return false;
-}
-
 
 export default App;
