@@ -40,6 +40,7 @@ export function EmployeeDetails() {
 			.then(response => {
 				if(response.status === 200) {
 					alert("User has successfully been created!");
+					window.localStorage.removeItem('nextRoute');
 					window.location = "/";
 				} else {
 					alert("Error creating user! Please try again later or contact support at (479) 866-7051.");
