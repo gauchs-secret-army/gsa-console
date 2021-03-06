@@ -7,6 +7,40 @@ export function Login() {
 	const [userID, setUserID] = useState("");
 	const [pass, setPass] = useState("");
 
+	function callLogin() {
+		if(validateUser(userID, pass)) {
+			var raw = JSON.stringify({
+				"employeeID": parseInt(userID),
+				"password": pass
+			});
+
+			fetch("https://gsa-backend-api.herokuapp.com/signin", {
+				method: 'POST',
+				headers: {
+    				'Content-Type': 'application/json' 
+				},
+				body: raw,
+				redirect: 'follow'
+			})
+			.then(response => {
+				if(response.status == 401) {
+					alert("User ID or Password is invalid!");
+				} else {
+					return response.text();
+				}
+			})
+			.then(result => {
+				window.localStorage.setItem('user', {
+					employeeID: userID,
+					manager: result
+				}.toString());
+				window.location = window.localStorage.getItem('nextRoute') || "/transaction";
+			}).catch(error => console.log('error', error));
+		} else {
+			alert("User ID or Password is invalid!");
+		}
+	}
+
 	function validateUser(id, password)
 	{
 		if(id !== "" && /^[0-9]*$/.test(id) && password !== "" && id.length <= 5)
@@ -44,7 +78,7 @@ export function Login() {
 							onChange={e => setPass(e.target.value)}
 						/>
 
-						<button className={styles.loginbtn}>Log In</button>
+						<button className={styles.loginbtn} onClick={() => callLogin()}>Log In</button>
 					</div>
 				</div>
 			</div>

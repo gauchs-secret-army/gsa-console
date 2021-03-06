@@ -14,23 +14,7 @@ import {EmployeeDetails} from './pages/employee/component/EmployeeDetails';
 import {SalesReport} from './pages/salesReport/component/SalesReport';
 import {CashierReport} from './pages/cashierReport/component/CashierReport';
 
-import {Sidenav} from './common/navigation/component/Sidenav';
-
 function App() {
-  let [employees, setEmployees ] = useState([]);
-  useEffect(() => {
-    fetch("https://gsa-backend-api.herokuapp.com/employees", {
-      method: 'GET',
-      redirect: 'follow'
-    })
-    .then(response => response.text())
-    .then(result => {
-      let list = JSON.parse(result);
-      console.log(list);
-      setEmployees(list);
-    })
-    .catch(error => console.log('error', error));
-  }, []);
 
 /*puts side nav in, setting routes for each link, directly renders each part and sends that part of the website out*/
   return (
@@ -44,16 +28,16 @@ function App() {
             starter page for each page. */}
           </Route>
           <Route path="/productListing">
-          <ProductListing/>{/* Insert Products Page Component */}
+            <ProductListing/>{/* Insert Products Page Component */}
           </Route>
           <Route path="/employeeDetails">
-          <EmployeeDetails/>{/* Insert User Page Component */}
+            <EmployeeDetails/>{/* Insert User Page Component */}
           </Route>
           <Route path="/salesReport">
-          <SalesReport/>{/* Insert Sales Report Page Component */}
+            <SalesReport/>{/* Insert Sales Report Page Component */}
           </Route>
           <Route path="/cashierReport">
-          <CashierReport/> {/* Insert User Report Page Component */}
+            <CashierReport/> {/* Insert User Report Page Component */}
           </Route>
 
           <Route path="/">
