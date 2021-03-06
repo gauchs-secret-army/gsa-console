@@ -47,9 +47,9 @@ export function EmployeeDetails() {
     const location = useLocation();
     window.localStorage.setItem('nextRoute', location.pathname);
     const user = JSON.parse(window.localStorage.getItem('user'));
-    if(!user) {
-      return <Redirect to="/" />
-    } else {
+    // if(!user) {
+    //   return <Redirect to="/" />
+    // } else {
         return (
             <div> 
                 <div className={styles.rootDiv}>
@@ -113,7 +113,7 @@ export function EmployeeDetails() {
                 <Sidenav/>
             </div>
         )
-    }
+    // }
 }
 
 //export default Transaction;
