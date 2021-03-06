@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./CashierReport.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
+import { Redirect, useLocation } from 'react-router';
 
 
 export function CashierReport() {
