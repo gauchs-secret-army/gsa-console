@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 export function Sidenav() {
+    const manager = window.localStorage.getItem('user').manager;
     return (
         <div className={styles.Sidenav}>
             <div className={styles.Logo} style={{backgroundImage: "url(/img/gsa_logo.png)"}}></div>
@@ -18,18 +19,27 @@ export function Sidenav() {
                 <Truck className={classNames(styles.Icon, styles.noHover)}/>
                 <div className={classNames(styles.SidenavBtnText, styles.noHover)}>View Products</div>
             </Link>
-            <Link to="/employeeDetails" className={styles.SidenavBtn}>
-                <UserPlus className={classNames(styles.Icon, styles.noHover)}/>
-                <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Create Employee</div>
-            </Link>
-            <Link to="/salesReport" className={styles.SidenavBtn}>
-                <DollarSign className={classNames(styles.Icon, styles.noHover)}/>
-                <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Sales Report</div>
-            </Link>
-            <Link to="/cashierReport" className={styles.SidenavBtn}>
-                <BarChart className={classNames(styles.Icon, styles.noHover)}/>
-                <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Cashier Report</div>
-            </Link>
+            { manager ?
+                <Link to="/employeeDetails" className={styles.SidenavBtn}>
+                    <UserPlus className={classNames(styles.Icon, styles.noHover)}/>
+                    <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Create Employee</div>
+                </Link>
+                : ""
+            }
+            { manager ?
+                <Link to="/salesReport" className={styles.SidenavBtn}>
+                    <DollarSign className={classNames(styles.Icon, styles.noHover)}/>
+                    <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Sales Report</div>
+                </Link>
+                : ""
+            }
+            { manager ?
+                <Link to="/cashierReport" className={styles.SidenavBtn}>
+                    <BarChart className={classNames(styles.Icon, styles.noHover)}/>
+                    <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Cashier Report</div>
+                </Link>
+                : ""
+            }
             <div className={styles.footer}>
                 <div className={styles.Separator}></div>
                 <a onClick={() => window.localStorage.removeItem('user')} className={styles.SignOutBtn}>
