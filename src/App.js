@@ -13,6 +13,7 @@ import {ProductListing} from './pages/products/component/ProductListing';
 import {EmployeeDetails} from './pages/employee/component/EmployeeDetails';
 import {SalesReport} from './pages/salesReport/component/SalesReport';
 import {CashierReport} from './pages/cashierReport/component/CashierReport';
+import {Menu} from './pages/menu/component/Menu';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/cashierReport">
             <CashierReport/> {/* Insert User Report Page Component */}
+          </Route>
+          <Route path="/menu">
+            <Menu />
           </Route>
 
           <Route path="/">
