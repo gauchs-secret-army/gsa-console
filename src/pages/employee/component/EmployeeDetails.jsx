@@ -6,7 +6,7 @@ import {Sidenav} from "../../../common/navigation/component/Sidenav";
 export function EmployeeDetails() {
     return (
         <div> 
-            <div class="rootDiv">
+            <div className={styles.rootDiv}>
             
                 Employee Page!
                 {/*This is where everything relating to transaction component in here, 

@@ -7,7 +7,7 @@ export function SalesReport() {
     return (
             <div> 
             
-            <div class="rootDiv">
+            <div className={styles.rootDiv}>
             
                 Sales report Page
                 {/*This is where everything relating to transaction component in here, 

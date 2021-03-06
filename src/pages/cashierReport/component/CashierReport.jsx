@@ -7,7 +7,7 @@ export function CashierReport() {
     return (
             <div> 
             
-            <div class="rootDiv">
+            <div className={styles.rootDiv}>
             
                 Cashier report!
                 {/*This is where everything relating to transaction component in here, 

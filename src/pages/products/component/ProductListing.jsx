@@ -7,9 +7,7 @@ export function ProductListing() {
     return (
         <div> 
             
-            <div class="rootDiv">
-                Products: Ibuprofen, Vitamin A tablets, Claritin
-                {/*This is where everything relating to transaction component in here, 
+                <div className={styles.rootDiv}>
                 this is where everything displayed will go, aka like fields*/}
             
             </div>
