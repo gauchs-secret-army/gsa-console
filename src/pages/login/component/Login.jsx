@@ -39,7 +39,7 @@ export function Login() {
 					employeeID: userID,
 					manager: JSON.parse(result)
 				}));
-				window.location = window.localStorage.getItem('nextRoute') || "/menu";
+				window.location = "/menu";
 			}).catch(error => console.log('error', error))
 			.finally(function() {
 				setLoading(false);
