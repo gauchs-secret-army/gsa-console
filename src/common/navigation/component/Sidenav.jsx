@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 export function Sidenav() {
-    const manager = JSON.parse(window.localStorage.getItem('user')).manager;
+    const user = window.localStorage.getItem('user');
+    var manager;
+    if(user !== null) {
+        manager = user.manager;
+    }
     return (
         <div className={styles.Sidenav}>
             <div className={styles.Logo} style={{backgroundImage: "url(/img/gsa_logo.png)"}}></div>
