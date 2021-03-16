@@ -4,6 +4,7 @@ import { LogOut, Truck, UserPlus, BarChart, ShoppingCart, DollarSign } from 'rea
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
+
 export function Sidenav() {
     const user = JSON.parse(window.localStorage.getItem('user'));
     var manager;
@@ -15,10 +16,11 @@ export function Sidenav() {
             <div className={styles.Logo} style={{backgroundImage: "url(/img/gsa_logo.png)"}}></div>
             <div className={styles.Separator}></div>
             {/*replace the http local host with the link to*/}
-            <Link to="/transaction" className={styles.SidenavBtn}>
+            {/*Transaction page*/}
+            <div className={styles.SidenavBtn} onClick={()=>alert("Functionality has not yet been implemented")}>
                 <ShoppingCart className={classNames(styles.Icon, styles.noHover)}/>
                 <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Start Transaction</div>
-            </Link>
+            </div>
             <Link to="/productListing" className={styles.SidenavBtn}>
                 <Truck className={classNames(styles.Icon, styles.noHover)}/>
                 <div className={classNames(styles.SidenavBtnText, styles.noHover)}>View Products</div>
@@ -31,17 +33,19 @@ export function Sidenav() {
                 : ""
             }
             { manager ?
-                <Link to="/salesReport" className={styles.SidenavBtn}>
+            //Sales report
+                <div className={styles.SidenavBtn} onClick={()=>alert("Functionality has not yet been implemented")}>
                     <DollarSign className={classNames(styles.Icon, styles.noHover)}/>
                     <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Sales Report</div>
-                </Link>
+                </div>
                 : ""
             }
             { manager ?
-                <Link to="/cashierReport" className={styles.SidenavBtn}>
+            //cashier report
+                <div className={styles.SidenavBtn} onClick={()=>alert("Functionality has not yet been implemented")}>
                     <BarChart className={classNames(styles.Icon, styles.noHover)}/>
                     <div className={classNames(styles.SidenavBtnText, styles.noHover)}>Cashier Report</div>
-                </Link>
+                </div>
                 : ""
             }
             <div className={styles.footer}>
