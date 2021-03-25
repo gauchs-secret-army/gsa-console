@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 
 export function Sidenav() {
-    const user = window.localStorage.getItem('user');
+    const user = JSON.parse(window.localStorage.getItem('user'));
     var manager;
     if(user !== null) {
         manager = user.manager;
