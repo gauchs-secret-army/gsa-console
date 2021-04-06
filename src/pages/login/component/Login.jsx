@@ -8,7 +8,7 @@ import TextField from "../../../common/text_field/component/TextField";
 import classNames from 'classnames';
 
 export function Login() {
-	const [userID, setUserID] = useState("");
+	const [userID, setUserID] = useState(window.localStorage.getItem('new_user'));
 	const [pass, setPass] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [loginLoading, setLoginLoading] = useState(false);
