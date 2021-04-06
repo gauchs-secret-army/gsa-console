@@ -41,10 +41,14 @@ export function EmployeeDetails() {
 				if(response.status === 200) {
 					alert("User has successfully been created!");
 					window.localStorage.removeItem('nextRoute');
-					window.location = "/";
+					return response.json();
 				} else {
 					alert("Error creating user! Please try again later or contact support at (479) 866-7051.");
 				}
+			})
+			.then(data => {
+				window.localStorage.setItem('new_user', data);
+				window.location = "/";
 			})
 			.catch(error => alert("Error creating user! Please try again later or contact sales support at (479) 866-7051."))
 			.finally(() => setLoading(false));
