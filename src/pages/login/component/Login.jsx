@@ -126,9 +126,14 @@ export function Login() {
 										placeholder="********"
 										value={pass}
 										onChange={e => setPass(e.target.value)}
+										onKeyDown={e => {
+											if(e.key === 'Enter') {
+												callLogin();
+											}
+										}}
 									/>
 
-									<button className={styles.loginbtn} onClick={() => callLogin()}>
+									<button type="submit" className={styles.loginbtn} onClick={() => callLogin()}>
 										{ loginLoading ? 
 											<GridLoader color={colors.light} size={15} />
 											: "Log In"
