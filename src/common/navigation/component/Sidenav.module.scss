@@ -14,9 +14,9 @@
     .footer {
         bottom: 0;
         position: fixed;
-        display: block;
         .Separator,
         .SignOutBtn {
+            margin: 5px 8px;
             display: block;
         }
     }
@@ -45,6 +45,7 @@
     border-radius: 16px;
     display: inline-block;
     transition: all .2s ease-out;
+    color: $light;
 }
 
 .SidenavBtn:hover {
@@ -73,7 +74,10 @@
 }
 .SignOutBtn:hover {
     background-color: $light;
-    color: $green;
+    .SignOutBtnText{
+        transition: all .2s ease-out;
+        color: $green;
+    }
 }
 
 .SignOutBtnText {
@@ -84,6 +88,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
+    color: $light;
 }
 
 .Icon {
@@ -92,7 +97,7 @@
     display: inline-block;
 }
 
-.Icon-Exit {
+.IconExit {
     margin-left: 3em;
     width: 40px;
     height: 40px;

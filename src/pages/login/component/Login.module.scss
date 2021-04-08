@@ -1,10 +1,10 @@
 @import "../../../common/styles/colors.module.scss";
 
- .login {
-	 background-color: var(--light);
-	 height: 100vh;
-	 width: 100vw;
-	 display: flex;
+.login {
+	background-color: var(--light);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
 	.grid {
 		margin: auto;
 		display: flex;
@@ -39,11 +39,49 @@
 			grid-area: 1 / 2 / 2 / 3;
 
 			.loginblock {
+				width: 347px;
+				height: 371px;
 				margin: auto 32px;
 				padding: 88px 64px;
 				border-radius: 16px;
 				border: solid 1px #707070;
 				background-color: $green;
+
+				.initBlock {
+					height: 100%;
+					width: 100%;
+					color: $light;
+					font-weight: bold;
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					.loginbtn {
+						margin-top: 8px;
+					}
+				}
+
+				.mainLoader {
+					margin: auto;
+					color: $light;
+					height: 100%;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					p {
+						font-weight: bold;
+						padding-top: 16px;
+					}
+
+					.mainSpinner {
+						left: 25.5px !important;
+					}
+				}
 
 				.loginfield {
 					&:first-child {
@@ -76,5 +114,5 @@
 				}
 			}
 		}
-	}	
+	}
 }
