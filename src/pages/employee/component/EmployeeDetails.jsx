@@ -6,7 +6,7 @@ import styles from "./EmployeeDetails.module.scss";
 import colors from "../../../common/styles/colors.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import {TextField} from "../../../common/input/text_field/component/TextField";
-import {TextField} from "../../../common/text_field/component/TextField";
+import SelectField from '../../../common/input/select_field/component/SelectField';
 
 export function EmployeeDetails() {
     const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ export function EmployeeDetails() {
     const [lastName, setLastName] = useState("");
     const [pass, setPass] = useState("");
     const [verifyPass, setVerifyPass] = useState("");
-    const [empType, setEmpType] = useState("");
+    const [empType, setEmpType] = useState("Select one...");
 
 	function registerUser() {
 		setLoading(true);
@@ -142,6 +142,26 @@ export function EmployeeDetails() {
 							label="Employee Type"
 							placeholder="Ex. General Manager"
 							value={empType}
+							onChange={e => setEmpType(e.target.value)}
+						/>
+						<SelectField
+							className={styles.loginfield}
+							label="Employee Type"
+							value={empType}
+							options={[
+								{
+									value: "General Manager",
+									label: "General Manager"
+								},
+								{
+									value: "Sales Manager",
+									label: "Sales Manager"
+								},
+								{
+									value: "Cashier",
+									label: "Cashier"
+								}
+							]}
 							onChange={e => setEmpType(e.target.value)}
 						/>
 						<button className={styles.createBtn} onClick={() => registerUser()}>
