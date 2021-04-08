@@ -10,7 +10,6 @@ import SelectField from '../../../common/input/select_field/component/SelectFiel
 
 export function EmployeeDetails() {
     const [loading, setLoading] = useState(false);
-    const [userID, setUserID] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [pass, setPass] = useState("");
@@ -21,7 +20,6 @@ export function EmployeeDetails() {
 		setLoading(true);
 		if(validateEntries()) {
 			var raw = JSON.stringify({
-				"employeeID": userID,
 				"firstName": firstName,
 				"lastName": lastName,
 				"password": pass,
@@ -59,7 +57,6 @@ export function EmployeeDetails() {
 	}
 
 	function clearEntries() {
-		setUserID("");
 		setFirstName("");
 		setLastName("");
 		setPass("");
@@ -68,10 +65,6 @@ export function EmployeeDetails() {
 	}
 
 	function validateEntries() {
-		if(userID === "" || !/^[0-9]{1,5}$/.test(userID)) {
-			alert("User ID should be a numeric value with 5 or fewer numbers!");
-			return false;
-		}
 		if(pass === "") {
 			alert("Password should not be empty!");
 			return false;
@@ -100,13 +93,6 @@ export function EmployeeDetails() {
                     {/*This is where everything relating to transaction component in here, 
                     this is where everything displayed will go, aka like fields*/}
                     <div className={styles.block}>
-                        <TextField
-							className={styles.loginfield}
-							label="Employee ID"
-							placeholder="Ex. 123456789"
-							value={userID}
-							onChange={e => setUserID(e.target.value)}
-						/>
                         <TextField
 							className={styles.loginfield}
 							label="First Name"
