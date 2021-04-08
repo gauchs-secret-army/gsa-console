@@ -5,6 +5,7 @@ import GridLoader from 'react-spinners/GridLoader';
 import styles from "./EmployeeDetails.module.scss";
 import colors from "../../../common/styles/colors.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
+import {TextField} from "../../../common/input/text_field/component/TextField";
 import {TextField} from "../../../common/text_field/component/TextField";
 
 export function EmployeeDetails() {

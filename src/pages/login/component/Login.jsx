@@ -4,7 +4,7 @@ import FadeLoader from 'react-spinners/FadeLoader';
 
 import styles from "./Login.module.scss";
 import colors from "../../../common/styles/colors.module.scss";
-import TextField from "../../../common/text_field/component/TextField";
+import TextField from "../../../common/input/text_field/component/TextField";
 import classNames from 'classnames';
 
 export function Login() {
