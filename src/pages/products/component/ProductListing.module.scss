@@ -5,7 +5,6 @@
 div.rootDiv{
     margin-left: 250px;
     float: left;
-    //float:lef;
     
 }
 
@@ -13,18 +12,11 @@ div.rootDiv{
     width: 120px;
     height: 164px;
     margin: 0;
-    //clear: both;
-    //float:left;
-    //margin: 24px 30px 32px 0;
-    //padding: 24px 17px;
     border-radius: 12px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     border: solid 4px #f6f1f1;
     background-color: #83bebe;
     overflow: hidden;
-    // display:block;
-    // clear:both;
-    //text-align: bottom;
 
 }
 .Icon {
@@ -36,10 +28,7 @@ div.rootDiv{
 }
 
   .Text {
-    // width: 86px;
-    // height: 16px;
-    
-    //margin: 10px 0 0;
+  
     margin: 0;
     font-family: AcuminPro;
     font-size: 21px;
@@ -50,9 +39,10 @@ div.rootDiv{
     letter-spacing: normal;
     text-align: center;
     color: white;
-    //position: absolute;
-    
-    // bottom: 0; 
-    // left: 0;
+  }
+  .ItemBubble
+  {
+    width:100%;
+    border-radius: 12px;
   }
 
