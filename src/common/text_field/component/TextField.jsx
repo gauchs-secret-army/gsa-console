@@ -8,7 +8,7 @@ export function TextField(props) {
     return (
         <div className={classNames(styles.textfield, className)}>
             <div className={styles.label, {
-                //'error': error
+                //'error': errors
             }}> { props.label } </div>
             <input
                 {...props}
