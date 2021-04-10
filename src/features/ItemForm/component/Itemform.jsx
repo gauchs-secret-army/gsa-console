@@ -1,8 +1,10 @@
 
-import styles from "./Itemform.module.scss";
 import React, { useState } from 'react';
+import styles from "./Itemform.module.scss";
+import colors from "../../../common/styles/colors.module.scss";
 import {TextField} from "../../../common/input/text_field/component/TextField";
 import ImageUploading from "react-images-uploading";
+import GridLoader from 'react-spinners/GridLoader';
 import { X } from "react-feather";
 
 export function ItemForm(props) {
@@ -80,8 +82,12 @@ export function ItemForm(props) {
 			alert("Item name should not be empty!");
 			return false;
 		}
-		if(price === "") {
+		if(price === "" || !(/^(([1-9]\d)|0)+\.\d{2}$/).test(price)) {
 			alert("Item does not have a price!");
+			return false;
+		}
+		if(stock === "" || !(/^[0-9]+$/.test(stock))) {
+			alert("Stock input is invalid!");
 			return false;
 		}
 		if(img === "") {
@@ -228,7 +234,10 @@ export function ItemForm(props) {
 									className={styles.button}
 									onClick={registerProduct}
 								>
-									Upload Item Data
+									{ loading ? 
+										<GridLoader color={colors.light} size={15} />
+										: "Upload Item Data"
+									}
 								</button>
 							</div>
 						: null
