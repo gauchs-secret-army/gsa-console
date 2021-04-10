@@ -166,67 +166,69 @@ export function ItemForm(props) {
 				>
 					<X />
 				</button>
-                <TextField
-                    className={styles.field}
-                    label="Product ID"
-					disabled={true}
-                    placeholder="Ex. 12345"
-                    value={productID}
-                    onChange={e => setProductID(e.target.value)}
-                />
-                <TextField
-                    className={styles.field}
-                    label="Product Name"
-                    placeholder="Ex. Pills"
-                    value={name}
-					disabled={!user.manager}
-                    onChange={e => setName(e.target.value)}
+				<div className={styles.content}>
+					<TextField
+						className={styles.field}
+						label="Product ID"
+						disabled={true}
+						placeholder="Ex. 12345"
+						value={productID}
+						onChange={e => setProductID(e.target.value)}
 					/>
-                <TextField
-                    className={styles.field}
-					disabled={!user.manager}
-                    label="Product Price"
-                    placeholder="Ex. 15.00"
-                    value={price}
-                    onChange={e => setPrice(e.target.value)}
-					/>
-                <TextField
-                    className={styles.field}
-					disabled={!user.manager}
-                    label="Current Stock"
-                    placeholder="Ex. 30"
-                    value={stock}
-                    onChange={e => setStock(e.target.value)}
-					/>
-                <div className = {styles.TextFieldHeader}>Upload Image</div>
-				{
-					user.manager ?
-						<div className={styles.editImage}>
-							<input
-								type="checkbox"
-								checked={editImg}
-								onChange={(e) => {
-									setEditImg(e.target.checked);
-								}}
-							/>
-							Edit Image?
-						</div>
-					: null
-				}
-                <ImgHandler/>
+					<TextField
+						className={styles.field}
+						label="Product Name"
+						placeholder="Ex. Pills"
+						value={name}
+						disabled={!user.manager}
+						onChange={e => setName(e.target.value)}
+						/>
+					<TextField
+						className={styles.field}
+						disabled={!user.manager}
+						label="Product Price"
+						placeholder="Ex. 15.00"
+						value={price}
+						onChange={e => setPrice(e.target.value)}
+						/>
+					<TextField
+						className={styles.field}
+						disabled={!user.manager}
+						label="Current Stock"
+						placeholder="Ex. 30"
+						value={stock}
+						onChange={e => setStock(e.target.value)}
+						/>
+					<div className = {styles.TextFieldHeader}>Upload Image</div>
+					{
+						user.manager ?
+							<div className={styles.editImage}>
+								<input
+									type="checkbox"
+									checked={editImg}
+									onChange={(e) => {
+										setEditImg(e.target.checked);
+									}}
+								/>
+								Edit Image?
+							</div>
+						: null
+					}
+					<ImgHandler/>
 
-				{
-					user.manager ?
-						<div className={styles.editImage}>
-							<button 
-								className={styles.button}
-								onClick={registerProduct}
-							>
-								Upload Item Data
-							</button>
-						</div>
-					: null
-				}
+					{
+						user.manager ?
+							<div className={styles.editImage}>
+								<button 
+									className={styles.button}
+									onClick={registerProduct}
+								>
+									Upload Item Data
+								</button>
+							</div>
+						: null
+					}
+				</div>
             </div>
         </div>
     )

@@ -164,3 +164,9 @@ div.rootDiv {
 .field {
     margin-bottom: 24px;
 }
+
+.content {
+    overflow-y: scroll;
+    max-height: 70vh;
+    scrollbar-width: none;
+}
