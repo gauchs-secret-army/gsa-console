@@ -75,10 +75,6 @@ export function ItemForm(props) {
 	}
 
 	function validateEntries() {
-		if(productID === "" || !/^[0-9]{1,5}$/.test(productID)) {
-			alert("Item ID should be a numeric value with 5 or fewer numbers!"); //Update
-			return false;
-		}
 		if(name === "") {
 			alert("Item name should not be empty!");
 			return false;
