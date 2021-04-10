@@ -9,17 +9,27 @@ div.rootDiv{
         border: solid 1px #707070;
         background-color: $green;
 
-        .createBtn {
-            height: 56px;
-            width: 100%;
-            margin-top: 48px;
-            border: none;
-            border-radius: 8px;
-            background-color: $red;
-            color: $light;
-            font-size: 24px;
-            font-weight: bold;
-            transition: all ease-in-out 0.2s;
+        .content {
+            overflow-y: scroll;
+            max-height: 70vh;
+            scrollbar-width: none;
+
+            .textfield {
+                margin-top: 16px;
+            }
+    
+            .createBtn {
+                height: 56px;
+                width: 100%;
+                margin-top: 48px;
+                border: none;
+                border-radius: 8px;
+                background-color: $red;
+                color: $light;
+                font-size: 24px;
+                font-weight: bold;
+                transition: all ease-in-out 0.2s;
+            }
         }
     }
 }
