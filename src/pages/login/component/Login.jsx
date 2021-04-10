@@ -23,11 +23,10 @@ export function Login() {
 		})
 		.then(response => response.json())
 		.then(result => {
-			console.log(result)
 			if(result.length === 0) {
 				setInit(true);
 			}
-		}).catch(error => console.log('error', error))
+		}).catch(error => console.error('error', error))
 		.finally(function() {
 			setLoading(false);
 		});
@@ -62,7 +61,7 @@ export function Login() {
 					manager: JSON.parse(result)
 				}));
 				window.location = "/menu";
-			}).catch(error => console.log('error', error))
+			}).catch(error => console.error('error', error))
 			.finally(function() {
 				setLoginLoading(false);
 			});

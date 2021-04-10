@@ -47,7 +47,6 @@ export function ItemForm(props) {
 				redirect: 'follow'
 			}).then(response => response.text())
 			.then(result => {
-				console.log(result);
 				if(result.status === 200) {
 					alert("Item has successfully been registered!");
 					window.localStorage.removeItem('nextRoute');
@@ -104,7 +103,6 @@ export function ItemForm(props) {
 			else
 				btn.style.display = "inline-block";
 		}
-		console.log("EDIT", editImg)
 		if(editImg) {
 			return(
 				<div className="ImgHandler">

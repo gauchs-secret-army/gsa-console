@@ -116,6 +116,7 @@ export function ProductListing() {
                         setModalState(false);
                         setSelApp({});
                     }}
+                    ariaHideApp={false}
                     className={styles.modal}
                 >
                     <ItemForm item={selectedApp} close={() => {
