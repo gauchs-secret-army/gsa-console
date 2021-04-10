@@ -14,9 +14,9 @@
     .footer {
         bottom: 0;
         position: fixed;
-        display: block;
         .Separator,
         .SignOutBtn {
+            margin: 5px 8px;
             display: block;
         }
     }
@@ -46,7 +46,6 @@
     display: inline-block;
     transition: all .2s ease-out;
     color: $light;
-
 }
 
 .SidenavBtn:hover {
@@ -75,7 +74,10 @@
 }
 .SignOutBtn:hover {
     background-color: $light;
-    color: $green;
+    .SignOutBtnText{
+        transition: all .2s ease-out;
+        color: $green;
+    }
 }
 
 .SignOutBtnText {
