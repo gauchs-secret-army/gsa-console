@@ -8,14 +8,22 @@ export function TextField(props) {
     var {className, ...props} = props;
     return (
         <div className={classNames(styles.textfield, className)}>
-            <div className={styles.label}> { props.label }  </div>
+            { 
+                props.label ? 
+                    <div className={styles.label}> { props.label }  </div>
+                : null
+            }
             <div className={styles.content}>
                 <div className={styles.lead}> { props.lead } </div>
                 <input
                     {...props}
                 />
             </div>
-            <div className={styles.label}>{ props.hint }</div>
+            {
+                props.hint ?
+                    <div className={styles.label}>{ props.hint }</div>
+                : null
+            }
         </div>
     )
 }
