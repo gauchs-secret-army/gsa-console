@@ -1,0 +1,172 @@
+@import "../../../common/styles/colors.module.scss";
+
+.Rectangle {
+    width: 120px;
+    height: 164px;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: solid 4px #f6f1f1;
+    background-color: #83bebe;
+    overflow: hidden;
+
+}
+
+.closeBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    color: $light;
+    padding: 0;
+
+
+    svg {
+        height: 32px;
+        width: 32px;
+    }
+        
+}
+
+.Icon {
+  width: 80px;
+  height: 80px;
+  font-family: AcuminPro;
+  padding-top: 25px;
+  display: inline-block;
+}
+
+  .Text {
+  
+    margin: 0;
+    font-family: AcuminPro;
+    font-size: 21px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: white;
+  }
+  .ItemBubble
+  {
+    width:100%;
+    border-radius: 12px;
+  }
+
+div.rootDiv {
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    
+    .block {
+        width: 500px;
+        margin: auto;
+        padding: 88px 64px;
+        border-radius: 16px;
+        border: solid 1px #707070;
+        background-color: $green;
+        position: relative;
+
+        .createBtn {
+            height: 56px;
+            width: 100%;
+            margin-top: 48px;
+            border: none;
+            border-radius: 8px;
+            background-color: $red;
+            color: $light;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all ease-in-out 0.2s;
+        }
+    }
+}
+
+.image_wrap {
+    background-color: $light;
+    height: auto;
+    width: calc(100% - 48px);
+    padding: 16px 24px;
+    border-radius: 8px;
+    display:inline-block;
+    text-align: center;
+
+    .button {
+        background-color: $green;
+    }
+    
+    .image_item {
+        .image {
+            padding: 15px;
+            vertical-align: middle;
+        }
+    }
+}
+.button {
+    width: 100%;
+    padding: 15px 32px;
+    border-radius: 8px;
+    border: none;
+    background-color: $red;
+    font-size: 16px;
+    color: $light;
+    transition: all ease-in-out 0.15s;
+}
+.button:hover {
+    background-color: $blue;
+    color: $green; 
+}
+
+.button_wrap {
+    display: inline-block;
+    .button2 {  
+        background-color: $green;
+        border-radius: 100%;
+        border: none;
+        color: $light;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        transition: all ease-in-out 0.1s;
+    }
+}
+.button2:hover {
+    background-color: $red;
+}
+
+.TextFieldHeader{
+    color: #b3cae5;
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+
+.test{
+    height: 100%;
+    width:100%;
+}
+
+.image {
+    max-height: 150px;
+    max-width: 50%;
+}
+
+.editImage {
+    color: $light;
+    margin: 16px 0;
+}
+
+.field {
+    margin-bottom: 24px;
+}
+
+.content {
+    overflow-y: scroll;
+    max-height: 70vh;
+    scrollbar-width: none;
+}

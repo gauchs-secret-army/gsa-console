@@ -4,11 +4,13 @@ import FadeLoader from 'react-spinners/FadeLoader';
 
 import styles from "./Login.module.scss";
 import colors from "../../../common/styles/colors.module.scss";
-import TextField from "../../../common/text_field/component/TextField";
+import TextField from "../../../common/input/text_field/component/TextField";
 import classNames from 'classnames';
 
+//sorry reetik
+//im adding this
 export function Login() {
-	const [userID, setUserID] = useState("");
+	const [userID, setUserID] = useState(window.localStorage.getItem('new_user'));
 	const [pass, setPass] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [loginLoading, setLoginLoading] = useState(false);
@@ -21,11 +23,10 @@ export function Login() {
 		})
 		.then(response => response.json())
 		.then(result => {
-			console.log(result)
 			if(result.length === 0) {
 				setInit(true);
 			}
-		}).catch(error => console.log('error', error))
+		}).catch(error => console.error('error', error))
 		.finally(function() {
 			setLoading(false);
 		});
@@ -60,7 +61,7 @@ export function Login() {
 					manager: JSON.parse(result)
 				}));
 				window.location = "/menu";
-			}).catch(error => console.log('error', error))
+			}).catch(error => console.error('error', error))
 			.finally(function() {
 				setLoginLoading(false);
 			});
@@ -126,9 +127,14 @@ export function Login() {
 										placeholder="********"
 										value={pass}
 										onChange={e => setPass(e.target.value)}
+										onKeyDown={e => {
+											if(e.key === 'Enter') {
+												callLogin();
+											}
+										}}
 									/>
 
-									<button className={styles.loginbtn} onClick={() => callLogin()}>
+									<button type="submit" className={styles.loginbtn} onClick={() => callLogin()}>
 										{ loginLoading ? 
 											<GridLoader color={colors.light} size={15} />
 											: "Log In"

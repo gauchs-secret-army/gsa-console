@@ -1,14 +1,33 @@
 @import "../../../common/styles/colors.module.scss";
 
+
+
+div.rootDiv{
+    margin-left: 250px;
+    float: left;
+    width: calc(100% - 250px);
+}
+
+.loader {
+    height: max-content;
+    width: max-content;
+    margin: 64px auto;
+}
+
 .Rectangle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 120px;
     height: 164px;
-    margin: 0;
+    margin: 16px;
     border-radius: 12px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    border: solid 4px #f6f1f1;
+    border: solid 4px $light;
     background-color: #83bebe;
-    overflow: hidden;
+    // overflow: hidden;
+
+        
 
 }
 .Icon {
@@ -19,106 +38,59 @@
   display: inline-block;
 }
 
-  .Text {
-  
-    margin: 0;
-    font-family: AcuminPro;
-    font-size: 21px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: white;
-  }
-  .ItemBubble
-  {
-    width:100%;
-    border-radius: 12px;
-  }
+.Text {
 
-div.rootDiv {
-    margin-left: 250px;
-    float: left;
-    .block {
-        width: 500px;
-        margin: auto;
-        padding: 88px 64px;
-        border-radius: 16px;
-        border: solid 1px #707070;
-        background-color: $green;
-
-        .createBtn {
-            height: 56px;
-            width: 100%;
-            margin-top: 48px;
-            border: none;
-            border-radius: 8px;
-            background-color: $red;
-            color: $light;
-            font-size: 24px;
-            font-weight: bold;
-            transition: all ease-in-out 0.2s;
-        }
-    }
+  // margin: 0;
+  padding-bottom: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: $light;
 }
 
-.image_wrap {
-    background-color: $light;
-    height: auto;
-    width: calc(100% - 48px);
-    padding: 16px 24px;
+.ItemBubble
+{
+  width:100%;
+  border-radius: 12px;
+}
+
+div.searchbar{
+    margin-right: 28px;
+    margin-top: 32px;
+    border: 2px rgb(218, 218, 218) solid;
+    border-style: inset;
     border-radius: 8px;
-    display:inline-block;
-    text-align: center;
+    background-color: $light;
+    height: 72px;
 
-    .button {
-        width: 100%;
-        padding: 15px 32px;
-        border-radius: 8px;
-        border: none;
-        background-color: $green;
-        font-size: 16px;
-        color: $light;
-        transition: all ease-in-out 0.15s;
-    }
-    .image_item {
-        .image {
-            padding: 15px;
-            vertical-align: middle;
-        }
+    .Icon {
+        // margin-left: 232px;
+        // margin-top: 32px;
+        // width: 40px;
+        height: 48px;
+        color: #727070;
+        padding-top: 0;
+        margin: auto;
+        //display: inline-block;
     }
 }
-.button:hover {
-    background-color: $blue;
-    color: $green; 
+
+
+
+.itemList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .Icon {
+    color: $light;
+  }
 }
 
-.button_wrap {
-    display: inline-block;
-    .button2 {  
-        background-color: $green;
-        border-radius: 100%;
-        border: none;
-        color: $light;
-        text-align: center;
-        text-decoration: none;
-        font-size: 12px;
-        transition: all ease-in-out 0.1s;
-    }
-}
-.button2:hover {
-    background-color: $red;
-}
-
-.TextFieldHeader{
-    color: #b3cae5;
-    font-size: 14px;
-    padding-bottom: 8px;
-}
-
-.test{
-    height: 100%;
-    width:100%;
+.modal {
+  height: 100vh;
 }

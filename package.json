@@ -16,13 +16,15 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-images-uploading": "^3.1.2",
+    "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "react-spinners": "^0.10.6",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_LOCAL_DEV=true react-scripts start",
+    "prod": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
