@@ -86,6 +86,10 @@ div.searchbar{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  .Icon {
+    color: $light;
+  }
 }
 
 .modal {
