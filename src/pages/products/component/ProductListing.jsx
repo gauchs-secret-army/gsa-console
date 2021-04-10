@@ -3,10 +3,10 @@ import styles from "./ProductListing.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import {TextField} from "../../../common/input/text_field/component/TextField";
 import { Redirect, useLocation } from 'react-router';
-import classNames from 'classnames';
 import Item from "../../../common/features/component/Item";
 import { Plus, Search } from 'react-feather';
-
+import classNames from 'classnames';
+import {Itemform} from "../../../features/navigation/component/Itemform";
 
 export function ProductListing() {
     const location = useLocation();
@@ -15,7 +15,7 @@ export function ProductListing() {
     const [search, setSearchField] = useState("");
     const [items, setItems] = useState([]);
     var searchTimer = setTimeout(callSearch(), 0);
-
+	
     function callSearch() {
         var raw = JSON.stringify({
             "term": search,
@@ -86,10 +86,11 @@ export function ProductListing() {
                         {/*This is where everything relating to transaction component in here, 
                         this is where everything displayed will go, aka like fields*/}
                 </div>
+				<Itemform/>
                 <Sidenav/>
             </div>
         )
     }
 }
 
-//export default Transaction;
+export default ProductListing;
