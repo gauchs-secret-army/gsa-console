@@ -1,6 +1,7 @@
 @import "../../styles/colors.module.scss";
 
 .Item {
+    margin: 16px;
 
     .name {
         font-family: AcuminPro;
@@ -28,8 +29,6 @@
     .Rectangle {
         width: 128px;
         height: 172px;
-        margin: 24px 0px 0px 0;
-        
         border-radius: 12px;
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
         background-color: #ffffff;
