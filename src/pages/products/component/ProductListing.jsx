@@ -23,7 +23,7 @@ export function ProductListing() {
 
     useEffect(() => {
         callSearch();
-    }, []);
+    }, [search]);
 
     function callSearch() {
         setLoading(true);
@@ -78,7 +78,6 @@ export function ProductListing() {
                         onChange={e => {
                             if(search !== e.target.value) {
                                 setSearchField(e.target.value);
-                                callSearch();
                             }
                         }}
                     />
