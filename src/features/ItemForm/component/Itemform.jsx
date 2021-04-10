@@ -5,17 +5,16 @@ import {TextField} from "../../../common/input/text_field/component/TextField";
 import ImageUploading from "react-images-uploading";
 import { X } from "react-feather";
 
-
 export function ItemForm(props) {
 	var {item, ...props} = props;
     const [loading, setLoading] = useState(false);
-    const [productID, setProductID] = useState(item.productID);
-    const [name, setName] = useState(item.name);
-    const [price, setPrice] = useState(item.price);
-    const [img, setImage] = useState(item.image); //Update
+    const [productID, setProductID] = useState(item.productID || "");
+    const [name, setName] = useState(item.name || "");
+    const [price, setPrice] = useState(item.price || "");
+    const [img, setImage] = useState(item.image || ""); //Update
 	const [images, setImages] = useState([]); //for ImgHandler
-    const [stock, setStock] = useState(item.stock);
-    const [createdOn, setCreatedOn] = useState(item.createdOn);
+    const [stock, setStock] = useState(item.stock || "");
+    const [createdOn, setCreatedOn] = useState(item.createdOn || "");
 	const [editImg, setEditImg] = useState(false);
 	const user = JSON.parse(window.localStorage.getItem('user'));
 	
@@ -23,20 +22,23 @@ export function ItemForm(props) {
 	function registerProduct() {
 		setLoading(true);
 		if(validateEntries()) {
-			var rawItem = JSON.stringify({
-				"productID": 2, // Expect this to go away at some point
-				"name": "Pills",
-				"price": "20.50",
-				"image": "1234",   // the stored encoded image string
-				"stock": 1
-			});
 
+			var preRaw = {
+				name,
+				price,
+				img,
+				stock
+			};
 			var endpoint;
-			if(item !== null) {
+			console.log("NAME", typeof item.name);
+			if(typeof item.name !== "undefined") {
 				endpoint = "https://gsa-backend-api.herokuapp.com/products/update";
+				preRaw.productID = productID;
 			} else {
 				endpoint = "https://gsa-backend-api.herokuapp.com/products/new";
 			}
+
+			var rawItem = JSON.stringify(preRaw);
 
 			fetch(endpoint, {
 				method: 'POST',
