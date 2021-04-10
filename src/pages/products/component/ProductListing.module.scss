@@ -38,87 +38,17 @@
     border-radius: 12px;
   }
 
-div.rootDiv {
-    margin-left: 250px;
-    float: left;
-    .block {
-        width: 500px;
-        margin: auto;
-        padding: 88px 64px;
-        border-radius: 16px;
-        border: solid 1px #707070;
-        background-color: $green;
-
-        .createBtn {
-            height: 56px;
-            width: 100%;
-            margin-top: 48px;
-            border: none;
-            border-radius: 8px;
-            background-color: $red;
-            color: $light;
-            font-size: 24px;
-            font-weight: bold;
-            transition: all ease-in-out 0.2s;
-        }
-    }
+div.searchbar{
+    margin-left: 232px;
+    margin-right: 28px;
+    margin-top: 32px;
 }
 
-.image_wrap {
-    background-color: $light;
-    height: auto;
-    width: calc(100% - 48px);
-    padding: 16px 24px;
-    border-radius: 8px;
-    display:inline-block;
-    text-align: center;
-
-    .button {
-        width: 100%;
-        padding: 15px 32px;
-        border-radius: 8px;
-        border: none;
-        background-color: $green;
-        font-size: 16px;
-        color: $light;
-        transition: all ease-in-out 0.15s;
-    }
-    .image_item {
-        .image {
-            padding: 15px;
-            vertical-align: middle;
-        }
-    }
-}
-.button:hover {
-    background-color: $blue;
-    color: $green; 
-}
-
-.button_wrap {
-    display: inline-block;
-    .button2 {  
-        background-color: $green;
-        border-radius: 100%;
-        border: none;
-        color: $light;
-        text-align: center;
-        text-decoration: none;
-        font-size: 12px;
-        transition: all ease-in-out 0.1s;
-    }
-}
-.button2:hover {
-    background-color: $red;
-}
-
-.TextFieldHeader{
-    color: #b3cae5;
-    font-size: 14px;
-    padding-bottom: 8px;
-}
-
-.test{
+.Icon {
+    // margin-left: 232px;
+    // margin-top: 32px;
+    // width: 40px;
     height: 100%;
-    width:100%;
+    color: #727070
+    //display: inline-block;
 }
