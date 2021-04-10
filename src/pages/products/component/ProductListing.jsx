@@ -118,7 +118,10 @@ export function ProductListing() {
                     }}
                     className={styles.modal}
                 >
-                    <ItemForm item={selectedApp} />
+                    <ItemForm item={selectedApp} close={() => {
+                        setModalState(false);
+                        setSelApp({});
+                    }}/>
                 </Modal>
             </div>
         )
