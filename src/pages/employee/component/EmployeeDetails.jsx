@@ -14,7 +14,7 @@ export function EmployeeDetails() {
     const [lastName, setLastName] = useState("");
     const [pass, setPass] = useState("");
     const [verifyPass, setVerifyPass] = useState("");
-    const [empType, setEmpType] = useState("Select one...");
+    const [empType, setEmpType] = useState(null);
 
 	function registerUser() {
 		setLoading(true);
@@ -73,8 +73,9 @@ export function EmployeeDetails() {
 			alert("Passwords do not match!");
 			return false;
 		}
-		if(empType === "") {
+		if(empType === null) {
 			alert("Please define a employee type!");
+			return false;
 		}
 		return true;
 	}
@@ -130,12 +131,16 @@ export function EmployeeDetails() {
 								value={empType}
 								options={[
 									{
+										value: null,
+										label: "Select one..."
+									},
+									{
 										value: "General Manager",
 										label: "General Manager"
 									},
 									{
-										value: "Sales Manager",
-										label: "Sales Manager"
+										value: "Shift Manager",
+										label: "Shift Manager"
 									},
 									{
 										value: "Cashier",
