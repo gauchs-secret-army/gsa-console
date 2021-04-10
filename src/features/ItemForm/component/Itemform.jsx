@@ -46,18 +46,19 @@ export function ItemForm(props) {
 				},
 				body: rawItem,
 				redirect: 'follow'
-			}).then(response => response.text())
-			.then(result => {
-				if(result.status === 200) {
+			}).then(response => {
+				if(response.status === 200) {
 					alert("Item has successfully been registered!");
-					window.localStorage.removeItem('nextRoute');
-					window.location = "/";
+					props.close();
 				} 
 				else {
 					alert("Error registering item! Please try again later or contact support at (479) 866-7051.");
 				}
 			})
-			.catch(error => alert("Error registering item! Please try again later or contact sales support at (479) 866-7051."))
+			.catch(error => {
+				console.error(error);
+				alert("Error registering item! Please try again later or contact sales support at (479) 866-7051.")
+			})
 	 		.finally(() => setLoading(false));
 		} 
 		else {

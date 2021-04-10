@@ -114,6 +114,7 @@ export function ProductListing() {
                     onRequestClose={() => {
                         setModalState(false);
                         setSelApp({});
+                        callSearch();
                     }}
                     ariaHideApp={false}
                     className={styles.modal}
@@ -121,6 +122,7 @@ export function ProductListing() {
                     <ItemForm item={selectedApp} close={() => {
                         setModalState(false);
                         setSelApp({});
+                        callSearch();
                     }}/>
                 </Modal>
             </div>
