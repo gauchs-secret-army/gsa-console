@@ -15,7 +15,7 @@ export function ItemForm(props) {
 	const [images, setImages] = useState([]); //for ImgHandler
     const [stock, setStock] = useState(item.stock || "");
     const [createdOn, setCreatedOn] = useState(item.createdOn || "");
-	const [editImg, setEditImg] = useState(false);
+	const [editImg, setEditImg] = useState(name === "");
 	const user = JSON.parse(window.localStorage.getItem('user'));
 	
 
@@ -26,7 +26,7 @@ export function ItemForm(props) {
 			var preRaw = {
 				name,
 				price,
-				img,
+				image: img,
 				stock
 			};
 			var endpoint;
@@ -206,7 +206,7 @@ export function ItemForm(props) {
 						/>
 					<div className = {styles.TextFieldHeader}>Upload Image</div>
 					{
-						user.manager ?
+						(user.manager && item.name !== undefined) ?
 							<div className={styles.editImage}>
 								<input
 									type="checkbox"
