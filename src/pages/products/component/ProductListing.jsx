@@ -57,7 +57,7 @@ export function ProductListing() {
             <div className={styles.rootDiv}> 
                 <div className={styles.searchbar}>
                     <TextField
-                        lead = {<Search className={classNames(styles.Icon, styles.noHover)}/>}
+                        lead={<Search className={classNames(styles.Icon, styles.noHover)}/>}
                         className={styles.loginfield}
                         placeholder="Ex. 12345, Vitamins, Male Supplements"
                         value={search}

@@ -1,7 +1,6 @@
 @import "../../../styles/colors.module.scss";
 
 .textfield {
-
     .label {
         color: $blue;
         font-size: 14px;
@@ -10,28 +9,26 @@
     
     .content {
         background-color: $light;
-    }
-
-    input {
-        background-color: $light;
-        height: 40px;
-        width: calc(100% - 48px);
-        padding: 16px 24px;
-        border-radius: 8px;
         display: flex;
+        flex-direction: row;
+        border-radius: 8px;
 
         .lead {
             padding-right: 16px;
+            height: 76px;
+            display: contents;
         }
 
         input {
-            height: 100%;
-            width: 100%;
-            background: none;
+            background-color: inherit;
             border: none;
+            border-radius: 8px;
+            height: 40px;
+            width: calc(100% - 48px);
+            padding: 16px 24px;
+            display: flex;
             font-size: 24px;
-        }
-        
-    }
     
+        }
+    }
 }
