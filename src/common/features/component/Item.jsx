@@ -8,7 +8,7 @@ export function Item(props) {
     var {item,className,...props} = props;
     return (
         
-        <div className={classNames(styles.Item, item)}>
+        <div className={classNames(styles.Item, className)}>
             <div className={styles.Rectangle}>
             <div className={styles.image}> { item.image} </div> 
             <div className={styles.name}> { item.name } </div> 
