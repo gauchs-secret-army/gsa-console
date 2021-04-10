@@ -12,7 +12,7 @@ export function ItemForm(props) {
     const [productID, setProductID] = useState(item.productID);
     const [name, setName] = useState(item.name);
     const [price, setPrice] = useState(item.price);
-    const [img, setImage] = useState(""); //Update
+    const [img, setImage] = useState(item.image); //Update
 	const [images, setImages] = useState([]); //for ImgHandler
     const [stock, setStock] = useState(item.stock);
     const [createdOn, setCreatedOn] = useState(item.createdOn);
