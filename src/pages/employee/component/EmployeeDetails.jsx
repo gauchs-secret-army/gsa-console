@@ -93,69 +93,64 @@ export function EmployeeDetails() {
                     {/*This is where everything relating to transaction component in here, 
                     this is where everything displayed will go, aka like fields*/}
                     <div className={styles.block}>
-                        <TextField
-							className={styles.loginfield}
-							label="First Name"
-							placeholder="Ex. John"
-							value={firstName}
-							onChange={e => setFirstName(e.target.value)}
-						/>
-                        <TextField
-							className={styles.loginfield}
-							label="Last Name"
-							placeholder="Ex. Gauch"
-							value={lastName}
-							onChange={e => setLastName(e.target.value)}
-						/>
-                        <TextField
-							className={styles.loginfield}
-							label="Password"
-							type="password"
-							placeholder="********"
-							value={pass}
-							onChange={e => setPass(e.target.value)}
-						/>
-                        <TextField
-							className={styles.loginfield}
-							label="Verify Password"
-							type="password"
-							placeholder="********"
-							value={verifyPass}
-							onChange={e => setVerifyPass(e.target.value)}
-						/>
-                        <TextField
-							className={styles.loginfield}
-							label="Employee Type"
-							placeholder="Ex. General Manager"
-							value={empType}
-							onChange={e => setEmpType(e.target.value)}
-						/>
-						<SelectField
-							className={styles.loginfield}
-							label="Employee Type"
-							value={empType}
-							options={[
-								{
-									value: "General Manager",
-									label: "General Manager"
-								},
-								{
-									value: "Sales Manager",
-									label: "Sales Manager"
-								},
-								{
-									value: "Cashier",
-									label: "Cashier"
+						<div className={styles.content}>
+							<TextField
+								className={styles.textfield}
+								label="First Name"
+								placeholder="Ex. John"
+								value={firstName}
+								onChange={e => setFirstName(e.target.value)}
+							/>
+							<TextField
+								className={styles.textfield}
+								label="Last Name"
+								placeholder="Ex. Gauch"
+								value={lastName}
+								onChange={e => setLastName(e.target.value)}
+							/>
+							<TextField
+								className={styles.textfield}
+								label="Password"
+								type="password"
+								placeholder="********"
+								value={pass}
+								onChange={e => setPass(e.target.value)}
+							/>
+							<TextField
+								className={styles.textfield}
+								label="Verify Password"
+								type="password"
+								placeholder="********"
+								value={verifyPass}
+								onChange={e => setVerifyPass(e.target.value)}
+							/>
+							<SelectField
+								className={styles.textfield}
+								label="Employee Type"
+								value={empType}
+								options={[
+									{
+										value: "General Manager",
+										label: "General Manager"
+									},
+									{
+										value: "Sales Manager",
+										label: "Sales Manager"
+									},
+									{
+										value: "Cashier",
+										label: "Cashier"
+									}
+								]}
+								onChange={e => setEmpType(e.target.value)}
+							/>
+							<button className={styles.createBtn} onClick={() => registerUser()}>
+								{ loading ? 
+									<GridLoader color={colors.light} size={15} />
+									: "Create Account"
 								}
-							]}
-							onChange={e => setEmpType(e.target.value)}
-						/>
-						<button className={styles.createBtn} onClick={() => registerUser()}>
-							{ loading ? 
-								<GridLoader color={colors.light} size={15} />
-								: "Create Account"
-							}
-						</button>
+							</button>
+						</div>
                     </div>
                 </div>
                 <Sidenav/>

@@ -23,7 +23,7 @@ export function ProductListing() {
 
     useEffect(() => {
         callSearch();
-    }, []);
+    }, [search]);
 
     function callSearch() {
         setLoading(true);
@@ -78,7 +78,6 @@ export function ProductListing() {
                         onChange={e => {
                             if(search !== e.target.value) {
                                 setSearchField(e.target.value);
-                                callSearch();
                             }
                         }}
                     />
@@ -115,6 +114,7 @@ export function ProductListing() {
                     onRequestClose={() => {
                         setModalState(false);
                         setSelApp({});
+                        callSearch();
                     }}
                     ariaHideApp={false}
                     className={styles.modal}
@@ -122,6 +122,7 @@ export function ProductListing() {
                     <ItemForm item={selectedApp} close={() => {
                         setModalState(false);
                         setSelApp({});
+                        callSearch();
                     }}/>
                 </Modal>
             </div>
