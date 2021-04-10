@@ -13,7 +13,7 @@ export function SelectField(props) {
                 <select
                     {...props}
                 >
-                    { options.map(opt => <option value={opt.value}> {opt.label }</option>) }
+                    { options.map((opt, index) => <option key={index} value={opt.value}> {opt.label }</option>) }
                 </select>
                 <ChevronDown className={styles.arrow}/>
             </div>
