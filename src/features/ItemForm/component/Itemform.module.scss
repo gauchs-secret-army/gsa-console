@@ -74,21 +74,25 @@ div.rootDiv {
     text-align: center;
 
     .button {
-        width: 100%;
-        padding: 15px 32px;
-        border-radius: 8px;
-        border: none;
         background-color: $green;
-        font-size: 16px;
-        color: $light;
-        transition: all ease-in-out 0.15s;
     }
+    
     .image_item {
         .image {
             padding: 15px;
             vertical-align: middle;
         }
     }
+}
+.button {
+    width: 100%;
+    padding: 15px 32px;
+    border-radius: 8px;
+    border: none;
+    background-color: $red;
+    font-size: 16px;
+    color: $light;
+    transition: all ease-in-out 0.15s;
 }
 .button:hover {
     background-color: $blue;
@@ -121,4 +125,18 @@ div.rootDiv {
 .test{
     height: 100%;
     width:100%;
+}
+
+.image {
+    max-height: 150px;
+    max-width: 50%;
+}
+
+.editImage {
+    color: $light;
+    margin: 16px 0;
+}
+
+.field {
+    margin-bottom: 24px;
 }

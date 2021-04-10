@@ -5,9 +5,10 @@ import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import {TextField} from "../../../common/input/text_field/component/TextField";
 import { Redirect, useLocation } from 'react-router';
 import classNames from 'classnames';
-import {Item} from "../../../common/features/component/Item";
+import {Item} from "../../../features/Item/component/Item";
 import { Plus, Search } from 'react-feather';
 import GridLoader from 'react-spinners/GridLoader';
+import {ItemForm} from '../../../features/ItemForm/component/Itemform';
 
 
 export function ProductListing() {
@@ -61,7 +62,7 @@ export function ProductListing() {
         return <Redirect to="/" />
     } else {
         return (
-            <div className={styles.rootDiv}> 
+            <div className={styles.rootDiv}>
                 <div className={styles.searchbar}>
                     <TextField
                         lead={<Search className={classNames(styles.Icon, styles.noHover)}/>}
@@ -100,6 +101,11 @@ export function ProductListing() {
                             { items }
                         </div>
                 }
+                <ItemForm item={{"productID": 1,
+                    "price": "20.50",
+                    "stock": 1,
+                    "image": "https://images.unsplash.com/photo-1588613254520-9d722c39aad5",
+                    "name": "Benedryll"}}/>
                 <Sidenav/>
             </div>
         )
