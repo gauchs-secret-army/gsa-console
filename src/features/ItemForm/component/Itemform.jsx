@@ -167,14 +167,18 @@ export function ItemForm(props) {
 					<X />
 				</button>
 				<div className={styles.content}>
-					<TextField
-						className={styles.field}
-						label="Product ID"
-						disabled={true}
-						placeholder="Ex. 12345"
-						value={productID}
-						onChange={e => setProductID(e.target.value)}
-					/>
+					{
+						productID !== "" ?
+							<TextField
+								className={styles.field}
+								label="Product ID"
+								disabled={true}
+								placeholder="Ex. 12345"
+								value={productID}
+								onChange={e => setProductID(e.target.value)}
+							/>
+						: null
+					}
 					<TextField
 						className={styles.field}
 						label="Product Name"
