@@ -5,10 +5,9 @@ import styles from "./Item.module.scss";
 
 export function Item(props) {
     //can add className to this list, the div item might be div className
-    var {item, className,...props} = props;
+    var {item, onClick, className,...props} = props;
     return (
-        
-        <div className={classNames(styles.Item, className)}>
+        <div className={classNames(styles.Item, className)} onClick={onClick}>
             <div className={styles.Rectangle}>
             <div className={styles.image}>
                 <img className={styles.ItemBubble} src={item.image}/>

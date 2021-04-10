@@ -11,6 +11,27 @@
     overflow: hidden;
 
 }
+
+.closeBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    color: $light;
+    padding: 0;
+
+
+    svg {
+        height: 32px;
+        width: 32px;
+    }
+        
+}
+
 .Icon {
   width: 80px;
   height: 80px;
@@ -39,8 +60,10 @@
   }
 
 div.rootDiv {
-    margin-left: 250px;
-    float: left;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    
     .block {
         width: 500px;
         margin: auto;
@@ -48,6 +71,7 @@ div.rootDiv {
         border-radius: 16px;
         border: solid 1px #707070;
         background-color: $green;
+        position: relative;
 
         .createBtn {
             height: 56px;

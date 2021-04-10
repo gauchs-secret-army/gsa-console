@@ -1,13 +1,9 @@
 
 import styles from "./Itemform.module.scss";
 import React, { useState } from 'react';
-import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import {TextField} from "../../../common/input/text_field/component/TextField";
-import { Redirect, useLocation } from 'react-router';
-import Item from "../../Item/component/Item";
-import { Plus, Search } from 'react-feather';
-import classNames from 'classnames';
 import ImageUploading from "react-images-uploading";
+import { X } from "react-feather";
 
 
 export function ItemForm(props) {
@@ -169,6 +165,12 @@ export function ItemForm(props) {
     return (
         <div className={styles.rootDiv}>
             <div className={styles.block}>
+				<button
+					className={styles.closeBtn}
+					onClick={props.close}
+				>
+					<X />
+				</button>
                 <TextField
                     className={styles.field}
                     label="Product ID"
@@ -225,7 +227,7 @@ export function ItemForm(props) {
 								className={styles.button}
 								onClick={registerProduct}
 							>
-								Update Item
+								Upload Item Data
 							</button>
 						</div>
 					: null

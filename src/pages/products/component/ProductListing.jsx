@@ -9,7 +9,7 @@ import {Item} from "../../../features/Item/component/Item";
 import { Plus, Search } from 'react-feather';
 import GridLoader from 'react-spinners/GridLoader';
 import {ItemForm} from '../../../features/ItemForm/component/Itemform';
-
+import Modal from 'react-modal';
 
 export function ProductListing() {
     const location = useLocation();
@@ -18,6 +18,8 @@ export function ProductListing() {
     const [search, setSearchField] = useState("");
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [modalState, setModalState] = useState(false);
+    const [selectedApp, setSelApp] = useState({});
 
     useEffect(() => {
         callSearch();
@@ -47,6 +49,10 @@ export function ProductListing() {
                     <Item
                         key={index}
                         item={prod}
+                        onClick={() => {
+                            setSelApp(prod);
+                            setModalState(true);
+                        }}
                     />
                 )
             });
@@ -92,7 +98,9 @@ export function ProductListing() {
                                 //inline if statement, checking if manager is true or false, if true then button if not then null.
                                 //the {} is a way to get back into javascript mode
                                 user.manager ? 
-                                    <div className={classNames(styles.Rectangle)} onClick={()=>alert("Functionality has not yet been implemented")}>
+                                    <div className={classNames(styles.Rectangle)} onClick={()=> {
+                                        setModalState(true);
+                                    }}>
                                         <Plus className={classNames(styles.Icon, styles.noHover)}/>
                                         <div className={classNames(styles.Text)}>Create Item</div>
                                     </div>
@@ -101,12 +109,17 @@ export function ProductListing() {
                             { items }
                         </div>
                 }
-                <ItemForm item={{"productID": 1,
-                    "price": "20.50",
-                    "stock": 1,
-                    "image": "https://images.unsplash.com/photo-1588613254520-9d722c39aad5",
-                    "name": "Benedryll"}}/>
                 <Sidenav/>
+                <Modal
+                    isOpen={modalState}
+                    onRequestClose={() => {
+                        setModalState(false);
+                        setSelApp({});
+                    }}
+                    className={styles.modal}
+                >
+                    <ItemForm item={selectedApp} />
+                </Modal>
             </div>
         )
     }
