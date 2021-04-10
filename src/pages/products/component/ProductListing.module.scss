@@ -8,6 +8,12 @@ div.rootDiv{
     width: calc(100% - 250px);
 }
 
+.loader {
+    height: max-content;
+    width: max-content;
+    margin: 64px auto;
+}
+
 .Rectangle {
     display: flex;
     flex-direction: column;

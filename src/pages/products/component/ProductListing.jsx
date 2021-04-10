@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./ProductListing.module.scss";
+import colors from "../../../common/styles/colors.module.scss";
 import {Sidenav} from "../../../common/navigation/component/Sidenav";
 import {TextField} from "../../../common/input/text_field/component/TextField";
 import { Redirect, useLocation } from 'react-router';
 import classNames from 'classnames';
 import {Item} from "../../../common/features/component/Item";
 import { Plus, Search } from 'react-feather';
+import GridLoader from 'react-spinners/GridLoader';
 
 
 export function ProductListing() {
@@ -14,12 +16,14 @@ export function ProductListing() {
     const user = JSON.parse(window.localStorage.getItem('user'));
     const [search, setSearchField] = useState("");
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         callSearch();
     }, []);
 
     function callSearch() {
+        setLoading(true);
         var raw = JSON.stringify({
             "term": search,
             "items": "17",
@@ -47,7 +51,10 @@ export function ProductListing() {
             });
             setItems(itemList);
         })
-        .catch(error => console.log('error', error));
+        .catch(error => alert("Error retrieving items! Please try again later or contact support at (479) 866-7051."))
+        .finally(() => {
+            setLoading(false);
+        })
     }
 
     if(!user) {
@@ -69,31 +76,30 @@ export function ProductListing() {
                         }}
                     />
                 </div>
-  
-                {/* <Item
-                    className={styles.Rectangle}
-                    //passing to the item component, the only ones ill use are price name and image
-                    item={{"productID": 1,
-                        "price": "20.50",
-                        "stock": 1,
-                        "image": <img className={styles.ItemBubble} src={"https://images.unsplash.com/photo-1588613254520-9d722c39aad5"}/>,
-                        "name": "Benedryll"
-                    }}
-                /> */}
-                <div className={styles.itemList}>
-                    {
-                        //inline if statement, checking if manager is true or false, if true then button if not then null.
-                        //the {} is a way to get back into javascript mode
-                        user.manager ? 
-                            <div className={classNames(styles.Rectangle)} onClick={()=>alert("Functionality has not yet been implemented")}>
-                                <Plus className={classNames(styles.Icon, styles.noHover)}/>
-                                <div className={classNames(styles.Text)}>Create Item</div>
-                            </div>
-                        : null
-                    }
-                    { items }
-                </div>
-
+                {
+                    loading ?
+                        <div className={styles.loader}>
+                            <GridLoader
+                                className={styles.loader}
+                                color={colors.green}
+                                size={15} 
+                            />
+                        </div>
+                    : 
+                        <div className={styles.itemList}>
+                            {
+                                //inline if statement, checking if manager is true or false, if true then button if not then null.
+                                //the {} is a way to get back into javascript mode
+                                user.manager ? 
+                                    <div className={classNames(styles.Rectangle)} onClick={()=>alert("Functionality has not yet been implemented")}>
+                                        <Plus className={classNames(styles.Icon, styles.noHover)}/>
+                                        <div className={classNames(styles.Text)}>Create Item</div>
+                                    </div>
+                                : null
+                            }
+                            { items }
+                        </div>
+                }
                 <Sidenav/>
             </div>
         )
