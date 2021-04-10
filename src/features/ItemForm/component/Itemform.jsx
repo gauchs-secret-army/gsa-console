@@ -30,7 +30,6 @@ export function ItemForm(props) {
 				stock
 			};
 			var endpoint;
-			console.log("NAME", typeof item.name);
 			if(typeof item.name !== "undefined") {
 				endpoint = "https://gsa-backend-api.herokuapp.com/products/update";
 				preRaw.productID = productID;
