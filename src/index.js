@@ -4,13 +4,6 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-if(process.env.REACT_APP_LOCAL_DEV) {
-  window.localStorage.setItem('user', JSON.stringify({
-    employeeID: "LocalTester",
-    manager: true
-  }));
-}
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
